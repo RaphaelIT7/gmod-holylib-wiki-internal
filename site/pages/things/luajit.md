@@ -11,6 +11,12 @@ HolyLib must be able to deal with two different JIT versions at once, one being 
 An example check at runtime to determine if a `ILuaInterface` is using GMod's JIT version is to do `L->dummy_ffid == FF_C` (if true it's a GMod state!) where we check if the JIT module is NOT active and that the interface is the GMod global interface.<br>
 This is because HolyLib can create its own interfaces too, an example would be <page>HolyLua</page>
 
+## Namespaces
+There are three different Lua namespaces, which all have different behavior!<br>
+\- `Lua`: In here any function should be usable for any Lua state, as all functions here should be independent if a lua_State is from HolyLib or GMod.<br>
+\- `RawLua`: All of these functions are specific to HolyLib's JIT version.<br>
+\- `GModLua`: All of these functions are specific to GMod's JIT version.<br>
+
 # Assumption
 We currently assume that the GCHeader is the same for ALL JIT versions!<br>
 If that ever changes the access for `dummy_ffid` will break!<br>
