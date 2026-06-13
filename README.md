@@ -1,6 +1,6 @@
 # gmod-holylib-wiki-internal
 
-Website: https://internal-holylib.raphaelit7.com/<br>
+Website: https://internal-holylib.raphaelit7.com/ (Not yet up!)<br>
 
 The Internal holylib wiki.<br>
 I like the gmod wiki, and since many probably got used to it, it's best to have a similar one.<br>
