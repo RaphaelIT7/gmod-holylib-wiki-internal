@@ -47,10 +47,7 @@ static inline CBaseEntity* GetLadder(void* pPlayer)
 	if (!pLadder)
 		return nullptr;
 
-	// This is unrelated, though if g_pEntityList is missing in HolyLib using EHANDLE::Get will fail
-	if (!g_pEntityList)
-		return Util::GetCBaseEntityFromIndex(((EHANDLE*)pLadder)->GetEntryIndex());
-
-	return ((EHANDLE*)pLadder)->Get();
+	// When working with an EHANDLE we never just use pHandle->GetEntryIndex()! Use Util::GetCBaseEntityFromHandle!
+	return Util::GetCBaseEntityFromHandle(*(EHANDLE*)pLadder);
 }
 </code>
